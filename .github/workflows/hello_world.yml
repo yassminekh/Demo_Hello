@@ -1,13 +1,10 @@
-name: hello world
-
+name: Afficher Hello World
 on: push
-
 jobs:
   hello_world_jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout du code
         uses: actions/checkout@v4
-
-      - name: say hello world
-        run: echo "hello world"
+      - name : Say Hello Wolrd !
+        run: echo "Hello World"
