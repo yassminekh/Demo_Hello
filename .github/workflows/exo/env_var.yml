@@ -1,0 +1,29 @@
+name: Amnesia
+
+# Event trigeer qui implique de déclencher le workflow manuellement
+on: workflow_dispatch
+
+env:
+  # Variable d'environnement pour stocker le message à afficher
+  Name: Francois
+
+jobs:
+  say_hello:
+  runs-on: ubuntu-latest
+  env:
+    # Variable d'environnement spécifique à ce job
+    ENTREPRISE: semifir
+  steps:
+    - name: "Dit Bonjour"
+      run: echo "Salut $Name ! Tu travailles chez $ENTREPRISE"
+      env:
+        # Variable d'environnement spécifique à cette étape
+        Day: mardi
+    - name: "Affiche le jour de la semaine"
+      run: echo "Quel jour sommes nous ? c'est $Day !"
+  
+  say_goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Dit au revoir"
+        run: echo "Au revoir $Name !"
